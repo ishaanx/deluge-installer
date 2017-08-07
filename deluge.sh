@@ -6,9 +6,9 @@ yes "" | sudo add-apt-repository ppa:deluge-team/ppa
 
 sudo apt update -y
 
-sudo apt upgrade -y
+#sudo apt upgrade -y
 
-sudo apt install deluged deluge-web deluge -y 
+sudo apt install deluged deluge-web -y 
 
 ########### DAEMON SERVICE ##########
 
