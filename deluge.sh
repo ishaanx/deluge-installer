@@ -6,6 +6,8 @@ any_key() {
     echo
 }
 
+wget https://raw.githubusercontent.com/e-sean/deluge/master/spinner.sh -q
+
 clear
 echo "+----------------------------------------------------------------+"
 echo "| This script will install Deluge on your Ubuntu Server          |"
@@ -13,10 +15,6 @@ echo "|                                                                |"
 echo "| ####################### e-sean - 2017 #######################  |"
 echo "+----------------------------------------------------------------+"
 any_key "Press any key to start the script..."
-
-start_spinner 'Initializing'
-wget https://raw.githubusercontent.com/e-sean/deluge/master/spinner.sh -q
-stop_spinner $?
 
 source "$(pwd)/spinner.sh"
 
