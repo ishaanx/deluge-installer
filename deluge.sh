@@ -42,5 +42,5 @@ killall deluge-web
 
 ########User and password#############
 read -p 'Enter a username for Deluge remote connection: ' usr
-read -sp 'Enter a password for $usr: ' pass
+read -sp 'Enter a new password: ' pass
 echo "$usr:$pass:10" >> /var/lib/deluge/.config/deluge/auth
