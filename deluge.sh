@@ -4,7 +4,7 @@
 
 yes "" | sudo add-apt-repository ppa:deluge-team/ppa
 
-sudo apt update -y
+#sudo apt update -y
 
 #sudo apt upgrade -y
 
