@@ -45,10 +45,13 @@ killall deluge-web
 
 ########User and password#############
 read -p 'Enter a username for Deluge remote connection: ' usr
-read -sp 'Enter a password for $usr: ' pass
+read -sp 'Enter a new password: ' pass
 echo "$usr:$pass:10" >> /var/lib/deluge/.config/deluge/auth
 
 ########Allow remote ############
 sudo sed -i 's/"allow_remote": false/"allow_remote": true/g' /var/lib/deluge/.config/deluge/core.conf
 
 sudo sed -i 's/"default_daemon": "",/"default_daemon": "127.0.0.1:58846",/g' /var/lib/deluge/.config/deluge/web.conf
+
+sudo systemctl start deluged
+sudo systemctl start deluge-web
