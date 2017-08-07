@@ -9,7 +9,10 @@ sudo apt update -y
 #sudo apt upgrade -y
 
 sudo apt install deluged deluge-web -y 
+###########DELUGE USER ##############
 
+sudo adduser --system  --gecos "Deluge Service" --disabled-password --group --home /var/lib/deluge deluge
+sudo adduser "$(whoami)" deluge
 ########### DAEMON SERVICE ##########
 
 sudo rm deluged.service
@@ -24,7 +27,7 @@ sudo systemctl enable /etc/systemd/system/deluged.service
 
 sudo rm deluge-web.service
 wget https://raw.githubusercontent.com/e-sean/deluge/master/deluge-web.service
-sudo cp deluged.service /etc/systemd/system/
+sudo cp deluge-web.service /etc/systemd/system/
 
 sudo systemctl start deluge-web
 sudo systemctl enable /etc/systemd/system/deluge-web.service
