@@ -8,7 +8,7 @@ sudo apt update -y
 
 sudo apt upgrade -y
 
-sudo apt install deluged deluge-web -y 
+sudo apt install deluged deluge-web deluge -y 
 
 ########### DAEMON SERVICE ##########
 
