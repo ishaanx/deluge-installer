@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install python-software-properties -y 
+#sudo apt-get install python-software-properties -y 
 
 yes "" | sudo add-apt-repository ppa:deluge-team/ppa
 
