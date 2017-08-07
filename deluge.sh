@@ -24,15 +24,15 @@ start_spinner 'Adding Deluge Repository'
 sudo mkdir -p /dlgtmp && touch /tmp/log.txt > /dlgtmp/log.txt 2>&1
 sudo add-apt-repository -y ppa:deluge-team/ppa > /dlgtmp/log.txt 2>&1
 stop_spinner $?
-
+echo
 start_spinner 'Updating Packages'
 sudo apt update -yqq
 stop_spinner $?
-
+echo
 start_spinner 'Installing Deluge'
 sudo apt install deluged deluge-web -yqq 
 stop_spinner $?
-
+echo
 ###########DELUGE USER ##############
 
 sudo adduser --system  --gecos "Deluge Service" --disabled-password --group --home /var/lib/deluge deluge
@@ -47,6 +47,7 @@ sudo systemctl daemon-reload
 sudo systemctl start deluged
 sudo systemctl enable deluged.service
 stop_spinner $?
+echo
 ########### WEB-UI SERVICE ##########
 
 start_spinner 'Creating Deluge WebUI Service'
@@ -57,6 +58,7 @@ sudo systemctl daemon-reload
 sudo systemctl start deluge-web
 sudo systemctl enable deluge-web.service
 stop_spinner $?
+echo
 ############# OPEN PORT###############
 
 sudo iptables -I INPUT -p tcp --dport 8112 -j ACCEPT
@@ -67,6 +69,7 @@ killall deluge-web
 
 ########User and password#############
 read -p 'Enter a username for Deluge remote connection: ' usr
+echo
 read -sp 'Enter a new password: ' pass
 echo "$usr:$pass:10" >> /var/lib/deluge/.config/deluge/auth
 
