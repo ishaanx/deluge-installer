@@ -12,21 +12,22 @@ sudo apt install deluged deluge-web -y
 
 ########### DAEMON SERVICE ##########
 
+sudo rm deluged.service
 wget https://raw.githubusercontent.com/e-sean/deluge/master/deluged.service
 sudo cp deluged.service /etc/systemd/system/
 
-sudo systemctl enable /etc/systemd/system/deluged.service
 sudo systemctl start deluged
-
+sudo systemctl enable /etc/systemd/system/deluged.service
 
 
 ########### WEB-UI SERVICE ##########
 
+sudo rm deluge-web.service
 wget https://raw.githubusercontent.com/e-sean/deluge/master/deluge-web.service
 sudo cp deluged.service /etc/systemd/system/
 
-sudo systemctl enable /etc/systemd/system/deluge-web.service
 sudo systemctl start deluge-web
+sudo systemctl enable /etc/systemd/system/deluge-web.service
 
 ############# OPEN PORT###############
 
