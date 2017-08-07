@@ -21,7 +21,7 @@ source "$(pwd)/spinner.sh"
 #sudo apt-get install python-software-properties -y 
 
 start_spinner 'Adding Deluge Repository'
-sudo mkdir /dlgtmp && touch /tmp/log.txt > /dlgtmp/log.txt 2>&1
+sudo mkdir -p /dlgtmp && touch /tmp/log.txt > /dlgtmp/log.txt 2>&1
 sudo add-apt-repository -y ppa:deluge-team/ppa > /dlgtmp/log.txt 2>&1
 stop_spinner $?
 
