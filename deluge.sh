@@ -35,8 +35,8 @@ stop_spinner $?
 echo
 ###########DELUGE USER ##############
 
-sudo adduser --system  --gecos "Deluge Service" --disabled-password --group --home /var/lib/deluge deluge /dlgtmp/log.txt 2>&1
-sudo adduser "$(whoami)" deluge /dlgtmp/log.txt 2>&1
+sudo adduser --system  --gecos "Deluge Service" --disabled-password --group --home /var/lib/deluge deluge > /dlgtmp/log.txt 2>&1
+sudo adduser "$(whoami)" deluge > /dlgtmp/log.txt 2>&1
 
 ########### DAEMON SERVICE ##########
 start_spinner 'Creating Deluge Daemon Service'
